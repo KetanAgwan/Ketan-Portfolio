@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://kit.fontawesome.com/c3f4bf0210.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <title>Ketan Agwan</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .swiper {
+            width: 95%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .project-showcase {
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(11px);
+            -webkit-backdrop-filter: blur(11px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+    </style>
+  <script type="module" crossorigin src="/assets/index-c73326f6.js"></script>
+  <link rel="stylesheet" href="/assets/index-2ac35084.css">
+</head>
+
+<body id="body" class="bg-black text-white cursor-fancy ">
+    <nav
+        class="navbar h-12 bg-transparent flex items-center justify-between w-full px-4 lg:h-20 overflow-hidden box-border ">
+        <div class="logo w-44 text-xl font-bold text-blue-500">
+            KETAN AGWAN
+        </div>
+        <span id="hamburger" class="lg:hidden inline-block text-white text-lg  ">
+            <i class="fa-solid fa-bars"></i>
+        </span>
+        <div id="options"
+            class="options text-white text-lg items-start justify-evenly flex-col absolute w-full left-0 top-10 z-10 h-52 hidden lg:flex lg:flex-row lg:h-20 lg:static lg:justify-end lg:items-center lg:bg-transparent md:bg-gray-500 2xsm:bg-gray-600">
+            <span id="about-btn" class="option text-lg mx-4 cursor-fancy-1 hover:opacity-80">About</span>
+            <span id="skills-btn" class="option text-lg mx-4 cursor-fancy-1 hover:opacity-80">Skills</span>
+            <span id="projects-btn" class="option text-lg mx-4 cursor-fancy-1 hover:opacity-80">Projects</span>
+            <span id="testimonial-btn" class="option text-lg mx-4 cursor-fancy-1 hover:opacity-80">What they say?</span>
+            <span class="option text-lg mx-4 cursor-fancy-1 flex items-center justify-center">
+                <input id="switch" type="checkbox" class="hidden">
+                <label id="switch-label" for="switch"
+                    class="inline-flex items-center w-10 h-5 bg-[#2e2d2d] rounded-full cursor-fancy-1 transition-all duration-700 shadow-md">
+                    <span id="switchBtn"
+                        class="inline-flex items-center justify-center w-3/5 h-[120%] text-sm  bg-[#3e3f40] border-2 border-[#67a7f0] text-white rounded-full cursor-fancy-1 transition-all duration-700 ">
+                        <i class="fa-regular fa-moon"></i>
+                    </span>
+                </label>
+            </span>
+        </div>
+    </nav>
+    <main
+        class="About lg:h-[80vh] w-full flex items-center justify-center overflow-hidden box-border md:h-[200vh] flex-wrap xsm:gap-10">
+        <div data-aos="fade-up"
+            class="about-right lg:w-2/5 lg:h-full flex flex-col justify-center lg:gap-5 lg:px-10 md:px-5 relative md:gap-7 md:w-full md:h-1/2 xsm:px-5 2xsm:px-2">
+            <img src="/assets/Ellipse 64-821d2d74.png" alt=""
+                class="absolute top-32 right-10 lg:top-10 lg:right-0 2xsm:top-0">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEQAAABECAYAAAA4E5OyAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAQ8SURBVHgB7ZxtTttAEIZn1nbVkKCaG8DPfkn0BOUG5AbkBnCDqjdobpDcwNwgNyhqqfhJbkAQHwHi3eluICggm/hzxlR9fkVOUPDrfXdez64D0ACO79rbv6edHWgAPjQAnKl9IDq3L0cgjIImgLCDCvagAYgL8utqvQtAm/Zl2ATbiAviAew+vib4BsIgCHIyDTcNxadLhyZrLX9rCycTEEJ0hGitd54dCqfTWQ8EERVEKUqYSHEXBBGzTIJdHlHob71vTcYggNgI0To+SHvPmLgHQogJguoFayDsgxAigpzM88Y8e6QhlklEBDEGV6ZSBSiSXNkn1Z9nYRi8iU8RIVzxUZFMwj5CgkB3M4jhEMkk7IIkZ480+DMJq2Veyh5pWNtscNqGdYRomnUhJ9fX6XmlDlgFQVD58wXyVhs2QTJkjxRokzOTsAmSJXukgRpyW60ofJaxbUIoiGsvnlKYpVSXhkWQ48v1XjG7PBJe3sTbwACLIKiodJ7gai/WnkOKZI80OPoktQji/H5jhzjZq0pQfO5Iwv7DkZ2gDz91LgZQA5UK4kqrFWHXEPQy3q+UAMdAMLK3AsP3rcsRVERpQR5Gwz4R9qjcxFkCHJMxfc8LorKWKiSIE+HqatZTtutVtSXKYk9oZC01bLe9qMg9UC5BnCWMbdyQoW79liiHte4EAaO8llopiKsSAPGeNnDQdBHSwTECRYh+f5WlEgVpsiXKsrCU53mjJHGeCPJQJb7ZKrH9ekdDDggHVoDDD+2LaHEIeUtlU7kv4UFg+kprmhjCDUQUW2CWhohCQjq/1Rg+sYzbq2FvbmwFIZElAE5cFVIIRxrh++elKpQ4qbrKokHvKKK9f3JSBTpst4JBUk7JVHY1xQc474BLJdFyuNFgL2w/Vv7gS5Gym4Zr5aHBnv2K3dcQzOzZDQkh+lxlMEtinlNudLeJllpliQx/X457S8269x11GUtZO4810bCz5v8ou4ZT6e3/wlLWTl/rFqeoJVZRW8fseLreQ5q3DivtmDtLuFLZeesf1bGi97+F+Pw7oGbcCWAVW7YJDjn2nbF03d0Qh5KQwggYYBEkvvGP5pNgYXD8qVVPU/k5LIJ82bCTH8EQioJ8T0mwLWWSB4WHvA1axcXMCeuGmT/X66f58wmOP65dbAETvFuqKP+VRjB9YIRVkLs7/wfkBDFgqS4LWAVxk2ueTOI+y73nnX0XorsTzfxZRLbJdAG7ILPbYJAxk0zabz1WuzjYBcmcSRAjiSerRPa6Z8kknNljGbEHiI6vOmfpbUje7LGM3PMytumb9p5dTM888VaNmCDKdsDT3vO8/HmlKsQESeuTSGSPZUSfykzKJBLZYxlRQZIyiQfeCAQRFcRlEre++ngAcSBpF4f4s//L7UU0IFZdGoXLJPe9Enka8YMq8yiv4B00gEYI4qL8G880YsPOXzy52uQCs51UAAAAAElFTkSuQmCC" alt=""
+                class="absolute top-24 right-40 w-8 lg:top-8 lg:right-9 2xsm:top-0 2xsm:right-10">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEQAAABECAYAAAA4E5OyAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAQ8SURBVHgB7ZxtTttAEIZn1nbVkKCaG8DPfkn0BOUG5AbkBnCDqjdobpDcwNwgNyhqqfhJbkAQHwHi3eluICggm/hzxlR9fkVOUPDrfXdez64D0ACO79rbv6edHWgAPjQAnKl9IDq3L0cgjIImgLCDCvagAYgL8utqvQtAm/Zl2ATbiAviAew+vib4BsIgCHIyDTcNxadLhyZrLX9rCycTEEJ0hGitd54dCqfTWQ8EERVEKUqYSHEXBBGzTIJdHlHob71vTcYggNgI0To+SHvPmLgHQogJguoFayDsgxAigpzM88Y8e6QhlklEBDEGV6ZSBSiSXNkn1Z9nYRi8iU8RIVzxUZFMwj5CgkB3M4jhEMkk7IIkZ480+DMJq2Veyh5pWNtscNqGdYRomnUhJ9fX6XmlDlgFQVD58wXyVhs2QTJkjxRokzOTsAmSJXukgRpyW60ofJaxbUIoiGsvnlKYpVSXhkWQ48v1XjG7PBJe3sTbwACLIKiodJ7gai/WnkOKZI80OPoktQji/H5jhzjZq0pQfO5Iwv7DkZ2gDz91LgZQA5UK4kqrFWHXEPQy3q+UAMdAMLK3AsP3rcsRVERpQR5Gwz4R9qjcxFkCHJMxfc8LorKWKiSIE+HqatZTtutVtSXKYk9oZC01bLe9qMg9UC5BnCWMbdyQoW79liiHte4EAaO8llopiKsSAPGeNnDQdBHSwTECRYh+f5WlEgVpsiXKsrCU53mjJHGeCPJQJb7ZKrH9ekdDDggHVoDDD+2LaHEIeUtlU7kv4UFg+kprmhjCDUQUW2CWhohCQjq/1Rg+sYzbq2FvbmwFIZElAE5cFVIIRxrh++elKpQ4qbrKokHvKKK9f3JSBTpst4JBUk7JVHY1xQc474BLJdFyuNFgL2w/Vv7gS5Gym4Zr5aHBnv2K3dcQzOzZDQkh+lxlMEtinlNudLeJllpliQx/X457S8269x11GUtZO4810bCz5v8ou4ZT6e3/wlLWTl/rFqeoJVZRW8fseLreQ5q3DivtmDtLuFLZeesf1bGi97+F+Pw7oGbcCWAVW7YJDjn2nbF03d0Qh5KQwggYYBEkvvGP5pNgYXD8qVVPU/k5LIJ82bCTH8EQioJ8T0mwLWWSB4WHvA1axcXMCeuGmT/X66f58wmOP65dbAETvFuqKP+VRjB9YIRVkLs7/wfkBDFgqS4LWAVxk2ueTOI+y73nnX0XorsTzfxZRLbJdAG7ILPbYJAxk0zabz1WuzjYBcmcSRAjiSerRPa6Z8kknNljGbEHiI6vOmfpbUje7LGM3PMytumb9p5dTM888VaNmCDKdsDT3vO8/HmlKsQESeuTSGSPZUSfykzKJBLZYxlRQZIyiQfeCAQRFcRlEre++ngAcSBpF4f4s//L7UU0IFZdGoXLJPe9Enka8YMq8yiv4B00gEYI4qL8G880YsPOXzy52uQCs51UAAAAAElFTkSuQmCC" alt=""
+                class="absolute top-60 right-72 md:w-10 lg:top-32 lg:right-32 2xsm:top-24 -z-10 md:z-10 w-5">
+            <h1 class="xl:text-7xl lg:text-5xl  md:text-7xl 2xsm:text-4xl">Hey There,<br> I’m Ketan</h1>
+            <h2 class="large-desc text-gray-400 md:text-2xl lg:text-base 2xsm:text-sm">
+                Capability in current front-end advancements to make consistent and natural client encounters.
+                Broad involvement with responsive plan, guaranteeing similarity across different gadgets and screen
+                sizes.
+                Solid comprehension of JavaScript, empowering me to fabricate intelligent and dynamic web applications.
+                Information on PHP for server-side turn of events and coordinating backend functionalities.
+                Knowledge of information base administration to deal with information capacity and recovery
+                productively.
+            </h2>
+            <div class="buttons w-full flex justify-start gap-10 my-5">
+                <button id="say-hello"
+                    class="cursor-fancy-1 text-black bg-[#D5F60C] px-10 py-2 rounded-3xl font-bold hover:shadow-btn-shadow transition-shadow xsm:px-5 xsm:py-2 xl:px-10">Say
+                    Hello</button>
+                <button id="explore-projects"
+                    class="cursor-fancy-1 text-[#D5F60C] bg-transparent px-14 py-2 border-2 border-[#D5F60C] rounded-3xl font-bold hover:shadow-btn-shadow hover:bg-[#D5F60C] hover:text-black transition-shadow xsm:px-5 xsm:py-2 xl:px-10">Explore
+                    Projects</button>
+            </div>
+        </div>
+        <div data-aos="fade-up"
+            class="about-left  lg:w-1/2 lg:h-full flex items-center justify-center relative md:w-full md:h-1/2">
+            <img src="/assets/profile-pic-removebg-571e33ce.png" alt="" class="">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEQAAABECAYAAAA4E5OyAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAQ8SURBVHgB7ZxtTttAEIZn1nbVkKCaG8DPfkn0BOUG5AbkBnCDqjdobpDcwNwgNyhqqfhJbkAQHwHi3eluICggm/hzxlR9fkVOUPDrfXdez64D0ACO79rbv6edHWgAPjQAnKl9IDq3L0cgjIImgLCDCvagAYgL8utqvQtAm/Zl2ATbiAviAew+vib4BsIgCHIyDTcNxadLhyZrLX9rCycTEEJ0hGitd54dCqfTWQ8EERVEKUqYSHEXBBGzTIJdHlHob71vTcYggNgI0To+SHvPmLgHQogJguoFayDsgxAigpzM88Y8e6QhlklEBDEGV6ZSBSiSXNkn1Z9nYRi8iU8RIVzxUZFMwj5CgkB3M4jhEMkk7IIkZ480+DMJq2Veyh5pWNtscNqGdYRomnUhJ9fX6XmlDlgFQVD58wXyVhs2QTJkjxRokzOTsAmSJXukgRpyW60ofJaxbUIoiGsvnlKYpVSXhkWQ48v1XjG7PBJe3sTbwACLIKiodJ7gai/WnkOKZI80OPoktQji/H5jhzjZq0pQfO5Iwv7DkZ2gDz91LgZQA5UK4kqrFWHXEPQy3q+UAMdAMLK3AsP3rcsRVERpQR5Gwz4R9qjcxFkCHJMxfc8LorKWKiSIE+HqatZTtutVtSXKYk9oZC01bLe9qMg9UC5BnCWMbdyQoW79liiHte4EAaO8llopiKsSAPGeNnDQdBHSwTECRYh+f5WlEgVpsiXKsrCU53mjJHGeCPJQJb7ZKrH9ekdDDggHVoDDD+2LaHEIeUtlU7kv4UFg+kprmhjCDUQUW2CWhohCQjq/1Rg+sYzbq2FvbmwFIZElAE5cFVIIRxrh++elKpQ4qbrKokHvKKK9f3JSBTpst4JBUk7JVHY1xQc474BLJdFyuNFgL2w/Vv7gS5Gym4Zr5aHBnv2K3dcQzOzZDQkh+lxlMEtinlNudLeJllpliQx/X457S8269x11GUtZO4810bCz5v8ou4ZT6e3/wlLWTl/rFqeoJVZRW8fseLreQ5q3DivtmDtLuFLZeesf1bGi97+F+Pw7oGbcCWAVW7YJDjn2nbF03d0Qh5KQwggYYBEkvvGP5pNgYXD8qVVPU/k5LIJ82bCTH8EQioJ8T0mwLWWSB4WHvA1axcXMCeuGmT/X66f58wmOP65dbAETvFuqKP+VRjB9YIRVkLs7/wfkBDFgqS4LWAVxk2ueTOI+y73nnX0XorsTzfxZRLbJdAG7ILPbYJAxk0zabz1WuzjYBcmcSRAjiSerRPa6Z8kknNljGbEHiI6vOmfpbUje7LGM3PMytumb9p5dTM888VaNmCDKdsDT3vO8/HmlKsQESeuTSGSPZUSfykzKJBLZYxlRQZIyiQfeCAQRFcRlEre++ngAcSBpF4f4s//L7UU0IFZdGoXLJPe9Enka8YMq8yiv4B00gEYI4qL8G880YsPOXzy52uQCs51UAAAAAElFTkSuQmCC" alt=""
+                class="absolute h-14 w-14 right-40 bottom-32 rotate-12 lg:bottom-24 lg:right-28  md:bottom-40 md:right-40 xsm:right-10 xsm:bottom-10">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAA2CAYAAAAxpDyoAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAQvSURBVHgB7ZxfUts8EMB3ZeKWPnGD5galJwBO0OblmwHKkJyAGA5Q8v6B4QQhQ4GZvoSeINyA9AbhBOWpLQ7RduXgTIYpBP+V09nfQxJsk5HnZ62klRTwL35V/fP7jyCUAhW+0sj3L4afQbAOmhdTS0CrHiBeehuuB4I1MPrgt2kJ3KDNh6qgKjVvHQcgFA4+PnBwerePCrdRVdbKKsX/GizrQK8q5bwF4gcJ8Vbr0Y1y1ZX3n9uHOQb/dtD/EjQJYYdP1rzN8tzgwVlQVwjboGGZS34JpL8Dqlt+XyLAZURY4XcggNbepnsCcwg+dcI/C5a5te9qpOO9jddHYJGwjSOnHf4xwpa3Vbl68trT4Soo3eZaMwCsNOYt9OJzJyeNvVIn3nqlBRYwZSAuA2no7G292n/p/81D6P0bOOuCSWNvrlx0G14Nb6Eg/C4t0c/gOq6MiHmUMlNIhI2b88/uutwm3Oxuuk1IyLxJebEQw+TmCmjsw4Eq0SqPi9YgJZNyv6m8L7KGJ0HFudiEDdTYIILewfnvxE/tLEIZmuqwWKlBBphyk6YO/Bz2TBiEEhNLiMH0cNAZvVeEO3mkW/43eTUjw4SYDJ9mI0Vr+lZ2KbFC1jTjHpjT5W+4yirdMu7emhSOm1u8PzwNjlDBCrzJVnhWJBYSMbnBlOmWqHuL6HjexsIl5Mjhl7sTRHxXRimxQ9ZjdrfcpgkFpDkUXFAVEhB2bx/GGnnLMOx+elUnou8cvnwoGalrSIR/ev+RlPYRVawnfDzWGLIM+pZkrJGGh5pC3GNsQEnITIhhemQPrxeOZ4UD7hSsktbtpAO/LCiblEyFGMK2YKT2OZe0wl9+BQo7LKcfyRmHNc43EScJCaoQs0ZlXt4wEzHs8cd+GaRkLiRi3Eg7Tc7AvjPZWc4eh11NfhgHLKIP6HRsiphmIiXDHmNSchMyb0ykKJ41tZRINYiQKcogRYQ84iG7fW1ryiH1OORfw2tw50PpNdC6bmMljtSQJ7A1OSdCnsGGFBEyg6KlSBsyA299cRC1KXnOAUWIkBcQSTFzQMfn99uQIxKyYhCFL4XO/s7GQgdyQITEZJyrc64dpZp5SBEhCTCLCM26AiSsPbdoLwkiJCGhFIBu1itwREgK8pAiQlKStRTp9qbESGAZLZbSGy9QT4cIyQCWcsJSPFNTki70iJCQlSFcQ+os5XOadcQiJGPSSpGQlTFh+CI4TrpOTYTkgPfJPTKLu5NIkZCVI0n2poiQnIkrRYQUQBwpIqQgjBSl8MOsFfcipEBeIkWEFMwsKSLEAs9JkXGIBcJNqGbD0K9hd/r44VnwQ4RYItzFpemGUy3tqcNLErIsE20YgqDikTv8IUJKQChF4Vuep68ugGAFsx/fIf3BfNYQbmIy670GIsQSDg77QE70AwZVAmopwMEfSsBEyWd8/OsAAAAASUVORK5CYII=" alt=""
+                class="absolute  left-20 top-20 -rotate-12 lg:top-12 lg:left-12 md:left-40 xsm:top-0 xsm:left-0">
+            <img src="data:image/png;base64,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" alt=""
+                class="absolute  left-0 bottom-0 lg:bottom-0 md:bottom-20 md:left-20 xsm:w-40">
+            <div
+                class="tags absolute flex items-center justify-evenly gap-2 md:text-lg xsm:text-sm px-2 py-1 rounded-lg bg-[#303030] shadow-tag-shadow top-32 right-32 font-mono lg:right-12 md:right-28 md:top-40 xsm:right-0 xsm:top-10">
+                <span
+                    class="md:text-lg xsm:text-md flex items-center justify-center w-8 h-8 bg-blue-500 rounded-3xl text-white">
+                    <i class="fa-solid fa-code"></i>
+                </span>
+                Developer
+            </div>
+            <div
+                class="tags absolute flex items-center justify-evenly gap-2 md:text-lg xsm:text-sm px-2 py-1 rounded-lg bg-[#303030] shadow-tag-shadow top-80 left-16 font-mono lg:left-0 xsm:left-2">
+                <span
+                    class="md:text-lg xsm:text-md flex items-center justify-center w-8 h-8 bg-blue-500 rounded-3xl text-white">
+                    <i class="fa-solid fa-heart"></i>
+                </span>
+                Frontend
+            </div>
+        </div>
+    </main>
+    <div
+        class="socials md:h-32 md:my-20 bg-blue-500 w-full overflow-hidden px-20 box-border  flex items-center justify-evenly md:text-6xl xsm:h-24 xsm:text-4xl xsm:px-0 xsm:my-10">
+        <span class="cursor-fancy-1 opacity-40 hover:opacity-100 transition-opacity">
+            <a href="https://github.com/KetanAgwan" target="_blank" class="cursor-fancy-1"><i
+                    class="fa-brands fa-github"></i></a></span>
+        <span class="cursor-fancy-1 opacity-40 hover:opacity-100 transition-opacity">
+            <a href="https://www.linkedin.com/in/ketanagwan/" target="_blank" class="cursor-fancy-1"><i
+                    class="fa-brands fa-linkedin-in"></i></a></span>
+        <span class="cursor-fancy-1 opacity-40 hover:opacity-100 transition-opacity">
+            <a href="https://codepen.io/KetanAgwan" target="_blank" class="cursor-fancy-1"><i
+                    class="fa-brands fa-codepen"></i></a></span>
+        <span class="cursor-fancy-1 opacity-40 hover:opacity-100 transition-opacity">
+            <a href="#" target="_blank" class="cursor-fancy-1"><i class="fa-brands fa-discord"></i></a>
+        </span>
+    </div>
+    <div
+        class="projects p-0 m-0 lg:h-screen w-full box-border overflow-x-clip overflow-y-visible md:h-[200vh] xsm:h-[200vh]">
+        <div
+            class="header lg:h-1/5 w-full flex lg:gap-0 items-center justify-between flex-wrap lg:px-20 md:px-10 md:h-1/5 xsm:px-2">
+            <div data-aos="fade-right"
+                class="header-left lg:text-5xl lg:w-1/2 md:h-1/2 md:w-full  md:text-5xl xsm:text-3xl ">
+                All Creative Works Selected Project
+            </div>
+            <div data-aos="fade-left"
+                class="header-right lg:text-base lg:w-1/2 md:w-full md:h-1/2 md:text-base xsm:text-sm xl:text-lg">
+                I am a front-end developer with a passion for building beautiful and user-friendly web applications. I
+                have experience building 30+ projects, including a personal portfolio website, a weather
+                application, some business landing pages, and a game.
+            </div>
+        </div>
+        <div class="slider-container h-4/5 flex flex-wrap-reverse relative overflow-x-clip overflow-y-visible ">
+            <div
+                class="glow h-[350px] w-[500px] absolute opacity-40 blur-2xl -z-10 lg:-top-24 rounded-tr-full bg-[rgba(21,87,219,0.67)] shadow-glow-shadow md:bottom-80">
+            </div>
+            <div
+                class="glow h-[350px] w-[500px] absolute opacity-40 blur-2xl -z-10 lg:bottom-5 rounded-br-full bg-[rgba(21,87,219,0.67)] shadow-glow-shadow">
+            </div>
+            <div data-aos="fade-up"
+                class="container-1 lg:w-[45%] lg:h-full flex justify-center items-center overflow-hidden md:w-full md:h-1/2 xsm:h-1/2 xsm:w-full">
+                <img src="/assets/0003 (1)-d8864393.png" alt="" class=" h-full lg:block hidden">
+                <img src="/assets/0005 (1)-1dad6934.png" alt="" class=" h-full block lg:hidden">
+            </div>
+            <div data-aos="fade-up"
+                class="slider-box lg:h-full lg:w-[55%] md:w-full md:h-1/2 md:flex items-center justify-center xsm:h-1/2 xsm:w-full">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div
+                                class="project-showcase group h-3/5 w-4/5 rounded-xl flex items-center justify-center overflow-hidden relative">
+                                <img src="/assets/drone_proj-7214cdc2.jpg" alt="">
+                                <div
+                                    class="project-links absolute z-10  h-full w-full bg-[rgba(255,255,255,0.2)] backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacityHover duration-1 flex items-center justify-center gap-20 text-black">
+                                    <a href="https://github.com/KetanAgwan/Flight-360-Drones" target="_blank"
+                                        class="active:text-black visited:text-black"><span
+                                            class="text-5xl cursor-fancy-1 hover:opacity-60 transition-opacity"><i
+                                                class="fa-brands fa-github"></i></span></a>
+                                    <a href="https://vocal-dolphin-9ccb70.netlify.app" target="_blank"
+                                        class="active:text-black visited:text-black"><span
+                                            class="text-5xl cursor-fancy-1 hover:opacity-60 transition-opacity"><i
+                                                class="fa-solid fa-globe"></i></span></a>
+                                </div>
+                            </div>
+                            <div class="project-desc w-4/5 text-start">
+                                <h1 class="text-2xl my-2">360 Drones</h1>
+                                <h2 class="lg:text-base my-2 md:text-lg xsm:text-sm"> I have recently created a landing
+                                    page for a imgaginary drone
+                                    company to
+                                    practice my front-end skills. I am really proud of the way it turned out, and I
+                                    believe
+                                    that it is a well-designed and professional page that showcases the company's drones
+                                    and
+                                    services in a clear and concise way.</h2>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div
+                                class="project-showcase group h-3/5 w-4/5 rounded-xl flex items-center justify-center overflow-hidden relative">
+                                <img src="/assets/vr_proj-29c8cd7a.jpg" alt="">
+                                <div
+                                    class="project-links absolute z-10  h-full w-full bg-[rgba(255,255,255,0.2)] backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacityHover duration-1 flex items-center justify-center gap-20 text-black">
+                                    <a href="https://github.com/KetanAgwan/VR-Light" target="_blank"
+                                        class="active:text-black visited:text-black"><span
+                                            class="text-5xl cursor-fancy-1 hover:opacity-60 transition-opacity"><i
+                                                class="fa-brands fa-github"></i></span></a>
+                                    <a href=" https://bespoke-smakager-f508ad.netlify.app/" target="_blank"
+                                        class="active:text-black visited:text-black"><span
+                                            class="text-5xl cursor-fancy-1 hover:opacity-60 transition-opacity"><i
+                                                class="fa-solid fa-globe"></i></span></a>
+                                </div>
+                            </div>
+                            <div class="project-desc w-4/5 text-start">
+                                <h1 class="text-2xl my-2">VR Light</h1>
+                                <h2 class="lg:text-base my-2 md:text-lg xsm:text-sm">I created a landing page as a
+                                    personal project to challenge
+                                    myself.
+                                    I wanted to see what I could create using HTML and CSS.
+                                    I'm really proud of the final product, and I'm excited to share it with you.</h2>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div
+                                class="project-showcase group h-3/5 w-4/5 rounded-xl flex items-center justify-center overflow-hidden relative">
+                                <img src="/assets/boldo-proj-e75cd1a5.png" alt="">
+                                <div
+                                    class="project-links absolute z-10  h-full w-full bg-[rgba(255,255,255,0.2)] backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacityHover duration-1 flex items-center justify-center gap-20 text-black">
+                                    <a href="https://github.com/KetanAgwan/BOLDO" target="_blank"
+                                        class="active:text-black visited:text-black"><span
+                                            class="text-5xl cursor-fancy-1 hover:opacity-60 transition-opacity"><i
+                                                class="fa-brands fa-github"></i></span></a>
+                                    <a href="https://teal-baklava-3f64ee.netlify.app" target="_blank"
+                                        class="active:text-black visited:text-black"><span
+                                            class="text-5xl cursor-fancy-1 hover:opacity-60 transition-opacity"><i
+                                                class="fa-solid fa-globe"></i></span></a>
+                                </div>
+                            </div>
+                            <div class="project-desc w-4/5 text-start">
+                                <h1 class="text-2xl my-2">BOLDO</h1>
+                                <h2 class="lg:text-base my-2 md:text-lg xsm:text-sm">This project is a landing page of a
+                                    imaginary business
+                                    organization.I made this responsive project for practicing and showcasing my
+                                    frontend
+                                    skills.</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next cursor-fancy-1"></div>
+                    <div class="swiper-button-prev cursor-fancy-1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="skills-container"
+        class="skills-container h-[130vh] w-full md:my-20 p-0 box-border overflow-hidden bg-[#23252A] xsm:my-0 md:h-[130vh] xsm:h-[150vh] ">
+        <div class="skills-header h-1/4 w-full flex items-center justify-center flex-col">
+            <h1 class="text-5xl my-2">About me</h1>
+            <h2 class="large-desc md:text-xl text-center my-2 text-gray-400 xsm:text-base"> I'm passionate about
+                creating beautiful and user-friendly web
+                experiences. <br>
+                I'm confident that I have the skills you're looking for.</h2>
+            <div class="my-2">
+                <a href="assets/Resume/Ketan's Resume.pdf" download="Ketan's Resume"> <button
+                        class="cursor-fancy-1 text-black bg-[#D5F60C] px-14 py-2 rounded-3xl font-bold hover:shadow-btn-shadow transition-shadow">
+                        Resume <i class="fa-solid fa-download"></i>
+                    </button></a>
+            </div>
+        </div>
+        <div class="tabs-box w-full h-3/4 flex items-center justify-center flex-col gap-4">
+            <div
+                class="tab-names lg:w-1/3 h-20 flex items-center justify-between text-2xl relative md:w-1/2 xsm:w-[90%]">
+                <span id="underline"
+                    class="border-b-4 border-[#D5F60C] h-full w-1/3  absolute left-0 duration-800 transition-all"></span>
+                <span id="skill-header"
+                    class=" h-full w-1/3 flex items-center justify-center text-[#D5F60C] cursor-fancy-1">Services</span>
+                <span id="educ-header"
+                    class=" h-full w-1/3 flex items-center justify-center cursor-fancy-1">Education</span>
+            </div>
+            <div id="skills-box"
+                class="tabs-desc w-4/5 h-5/6 flex items-center justify-center flex-col divide-y-2 xsm:w-[90%]">
+                <div data-aos="fade-right" class="skill h-[14.28%] w-full flex items-center justify-evenly">
+                    <span class="h-full w-1/3 flex items-center justify-center xsm:flex-wrap md:flex-nowrap ">
+                        <span
+                            class="md:h-full md:w-1/2 flex items-center md:justify-end xsm:justify-center md:mx-5 xsm:mx-0 xsm:w-full xsm:h-1/2 ">
+                            <img src="/assets/html-5-25319599.png" alt="" class="h-1/2">
+                        </span>
+                        <span class="md:h-full md:w-1/2 flex items-center xsm:justify-center xsm:w-full xsm:h-1/2 ">-
+                            HTML</span>
+                    </span>
+                    <span
+                        class="w-1/3 flex items-center justify-center text-center md:text-base xsm:text-md">Frontend</span>
+                    <span class="h-full w-1/3 flex items-center justify-center md:text-base xsm:text-md">Advanced</span>
+                </div>
+                <div data-aos="fade-left" class="skill h-[14.28%] w-full flex items-center justify-evenly">
+                    <span class="h-full w-1/3 flex items-center justify-center flex-wrap md:flex-nowrap">
+                        <span
+                            class="md:h-full md:w-1/2 flex items-center md:justify-end  xsm:justify-center md:mx-5 xsm:mx-0 xsm:w-full xsm:h-1/2">
+                            <img src="/assets/css-3-d2e9f9dd.png" alt="" class="h-1/2">
+                        </span>
+                        <span class="md:h-full md:w-1/2 flex items-center xsm:justify-center xsm:w-full xsm:h-1/2">-
+                            CSS</span>
+                    </span>
+                    <span
+                        class="h-full w-1/3 flex items-center justify-center text-center md:text-base xsm:text-md">Frontend</span>
+                    <span
+                        class="h-full w-1/3 flex items-center justify-center  md:text-base xsm:text-md">Advanced</span>
+                </div>
+                <div data-aos="fade-right" class="skill h-[14.28%] w-full flex items-center justify-evenly">
+                    <span class="h-full w-1/3 flex items-center justify-center flex-wrap md:flex-nowrap">
+                        <span
+                            class="md:h-full md:w-1/2 flex items-center md:justify-end xsm:justify-center md:mx-5 xsm:mx-0 xsm:w-full xsm:h-1/2">
+                            <img src="/assets/js-30558d7e.png" alt="" class="h-1/2">
+                        </span>
+                        <span class="md:h-full md:w-1/2 flex items-center xsm:justify-center xsm:w-full xsm:h-1/2">-
+                            JAVASCRIPT</span>
+                    </span>
+                    <span
+                        class="h-full w-1/3 flex items-center justify-center text-center md:text-base xsm:text-md">Frontend
+                        & Backend</span>
+                    <span
+                        class="h-full w-1/3 flex items-center justify-center  md:text-base xsm:text-md">Advanced</span>
+                </div>
+                <div data-aos="fade-left" class="skill h-[14.28%] w-full flex items-center justify-evenly">
+                    <span class="h-full w-1/3 flex items-center justify-center flex-wrap md:flex-nowrap">
+                        <span
+                            class="md:h-full md:w-1/2 flex items-center md:justify-end xsm:justify-center md:mx-5 xsm:mx-0 xsm:w-full xsm:h-1/2">
+                            <img src="data:image/png;base64,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" alt="" class="h-1/2 ">
+                        </span>
+                        <span class="md:h-full md:w-1/2 flex items-center xsm:justify-center xsm:w-full xsm:h-1/2">-
+                            TailwindCSS</span>
+                    </span>
+                    <span
+                        class="h-full w-1/3 flex items-center justify-center text-center md:text-base xsm:text-md">Frontend</span>
+                    <span
+                        class="h-full w-1/3 flex items-center justify-center  md:text-base xsm:text-md">Advanced</span>
+                </div>
+                <div data-aos="fade-right" class="skill h-[14.28%] w-full flex items-center justify-evenly">
+                    <span class="h-full w-1/3 flex items-center justify-center flex-wrap md:flex-nowrap">
+                        <span
+                            class="md:h-full md:w-1/2 flex items-center md:justify-end xsm:justify-center md:mx-5 xsm:mx-0 xsm:w-full xsm:h-1/2">
+                            <img src="/assets/php-80069a19.png" alt="" class="h-1/2">
+                        </span>
+                        <span class="md:h-full md:w-1/2 flex items-center xsm:justify-center xsm:w-full xsm:h-1/2">-
+                            PHP</span>
+                    </span>
+                    <span
+                        class="h-full w-1/3 flex items-center justify-center text-center md:text-base xsm:text-md">Backend</span>
+                    <span
+                        class="h-full w-1/3 flex items-center justify-center  md:text-base xsm:text-md">Advanced</span>
+                </div>
+                <div data-aos="fade-left" class="skill h-[14.28%] w-full flex items-center justify-evenly">
+                    <span class="h-full w-1/3 flex items-center justify-center flex-wrap md:flex-nowrap">
+                        <span
+                            class="md:h-full md:w-1/2 flex items-center md:justify-end xsm:justify-center md:mx-5 xsm:mx-0 xsm:w-full xsm:h-1/2">
+                            <img src="/assets/git-icon-fd611ca1.png" alt="" class="h-1/2">
+                        </span>
+                        <span class="md:h-full md:w-1/2 flex items-center xsm:justify-center xsm:w-full xsm:h-1/2">-
+                            GIT</span>
+                    </span>
+                    <span
+                        class="h-full w-1/3 flex items-center justify-center text-center md:text-base xsm:text-md">Version
+                        controll</span>
+                    <span
+                        class="h-full w-1/3 flex items-center justify-center  md:text-base xsm:text-md">Advanced</span>
+                </div>
+                <div data-aos="fade-right" class="skill h-[14.28%] w-full flex items-center justify-evenly">
+                    <span class="h-full w-1/3 flex items-center justify-center flex-wrap md:flex-nowrap">
+                        <span
+                            class="md:h-full md:w-1/2 flex items-center md:justify-end xsm:justify-center md:mx-5 xsm:mx-0 xsm:w-full xsm:h-1/2">
+                            <img src="/assets/github_octocat-4c000ece.png" alt="" class="h-1/2">
+                        </span>
+                        <span class="md:h-full md:w-1/2 flex items-center xsm:justify-center xsm:w-full xsm:h-1/2">-
+                            GITHUB</span>
+                    </span>
+                    <span
+                        class="h-full w-1/3 flex items-center justify-center text-center md:text-base xsm:text-md">Collaboration,hosting,<br>
+                        project
+                        management</span>
+                    <span
+                        class="h-full w-1/3 flex items-center justify-center  md:text-base xsm:text-md">Advanced</span>
+                </div>
+            </div>
+            <div id="education-box"
+                class="tabs-desc w-11/12 h-5/6 items-center justify-start flex-col divide-y-2 hidden">
+                <div data-aos="fade-right"
+                    class="education w-full h-1/3 flex items-center md:justify-evenly xsm:justify-between">
+                    <span
+                        class="h-full md:w-1/4 flex items-center justify-center flex-col md:text-start xsm:w-2/5 xsm:text-center">
+                        <h1 class="text-sm">2019-2021</h1>
+                        <h2 class="lg:text-xl md:text-lg xsm:text-xl">Higher Secondary Education</h2>
+                    </span>
+                    <span
+                        class="h-full md:w-1/4 flex items-center justify-center flex-col text-xl md:text-start xsm:w-2/5 xsm:text-center">
+                        1st rank
+                    </span>
+                    <span
+                        class="h-full w-1/2 flex items-center justify-center flex-col lg:text-base md:text-sm md:block xsm:hidden">
+                        My higher secondary education in the arts field was a formative experience that helped me
+                        develop my communication and stage presence skills.
+                        Through my involvement in plays and other performances, I learned how to project my voice,
+                        articulate my thoughts clearly,
+                        and connect with an audience.
+                        I also developed a strong sense of confidence and self-belief, which has been invaluable in my
+                        personal and professional life.
+                    </span>
+                </div>
+                <div data-aos="fade-left"
+                    class="education w-full h-1/3 flex items-center md:justify-evenly xsm:justify-between">
+                    <span
+                        class="h-full md:w-1/4 flex items-center justify-center flex-col md:text-start xsm:w-2/5 xsm:text-center">
+                        <h1 class="text-sm">2021-ongoing</h1>
+                        <h2 class="lg:text-xl md:text-lg xsm:text-xl">Bachelore of Business Administration (Computer
+                            Application)-(current)</h2>
+                    </span>
+                    <span
+                        class="h-full md:w-1/4 flex items-center justify-center flex-col text-xl md:text-start xsm:w-2/5 xsm:text-center">
+                        1st rank(till now)
+                    </span>
+                    <span
+                        class="h-full w-1/2 flex items-center justify-center flex-col lg:text-base md:text-sm md:block xsm:hidden">
+                        I am currently pursuing a Bachelor of Business Administration (Computer Application) degree.
+                        This program is giving me a solid foundation in business and computer science, and it is helping
+                        me to stay up-to-date on the latest technological trends. I am particularly interested in Web
+                        Development,
+                        and I am eager to use my skills and knowledge to make a difference in the world.
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div
+        class="gallery-container lg:h-screen p-0 w-full flex items-center justify-center flex-wrap-reverse md:h-[200vh] xsm:h-[230vh] overflow-x-hidden">
+        <div data-aos="fade-right"
+            class="gallery-box lg:h-full lg:w-3/5 flex items-center justify-center md:h-1/2 md:w-full xsm:h-1/2">
+            <div class="lg:h-[95%] flex items-center justify-center md:h-4/5 md:w-full xsm:h-1/3">
+                <div
+                    class="grid grid-cols-2 md:grid-cols-3 grid-rows-3 md:grid-rows-4 gap-x-2 gap-y-2 xl:h-5/6 lg:h-3/4 w-4/5 mx-auto md:h-[90%]">
+                    <div class="row-span-1 md:row-span-2 flex items-center justify-center overflow-hidden rounded-md">
+                        <img src="/assets/proj_7-5afa14ed.png" alt="" class="h-full w-full">
+                    </div>
+                    <div class="col-span-1 md:col-span-2 overflow-hidden rounded-md">
+                        <img src="/assets/proj_2-281d8ee6.jpg" alt="" class="h-full w-full">
+                    </div>
+                    <div class="flex items-center justify-center overflow-hidden rounded-md">
+                        <img src="/assets/proj_3-c6493cfa.jpg" alt="" class=" h-full">
+                    </div>
+                    <div class=" row-span-1 md:row-span-2 flex items-center justify-center overflow-hidden rounded-md">
+                        <img src="/assets/proj_8-69ecb43b.png" alt="" class=" h-full">
+                    </div>
+                    <div
+                        class="row-span-1 md:row-span-2 col-span-1 md:col-span-2 flex items-center justify-center overflow-hidden rounded-md">
+                        <img src="/assets/proj_5-0c36c430.jpg" alt="" class=" w-[170%] h-full">
+                    </div>
+                    <div class=" rounded-md overflow-hidden">
+                        <img src="/assets/proj_6-7008d5bd.jpg" alt="" class="h-full">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-aos="fade-left"
+            class="project-info-box lg:h-full lg:w-2/5  flex items-start justify-center flex-col lg:gap-5 md:gap-10 lg:pr-5 md:h-1/2 md:w-full md:px-5 lg:p-0 box-border xsm:h-1/2 xsm:gap-5 xsm:px-5">
+            <div class="header text-5xl xl:text-6xl">Full Stack Project</div>
+            <div class="title md:text-3xl xsm:text-2xl xl:text-3xl">DiscussIt : A Platform for Programmers to Discuss
+                Coding Problems</div>
+            <div class="about large-desc lg:text-base xl:text-lg text-gray-400">DiscussIt is a platform that allows
+                programmers to discuss coding problems with
+                each other.
+                It is a place where programmers can ask questions, share solutions, and learn from each other.
+                DiscussIt is a valuable resource for programmers of all skill levels, from beginners to experts.
+                Programmers often face problems while coding. These problems can be anything from a simple syntax error
+                to a
+                complex algorithm design challenge. When programmers face these problems, they often turn to the
+                internet for help. However,
+                it can be difficult to find reliable and accurate information online.
+                DiscussIt solves this problem by providing a dedicated platform for programmers to discuss coding
+                problems with each other.
+                DiscussIt is a community of programmers who are willing to help each other learn and grow.
+            </div>
+            <a href="https://github.com/KetanAgwan/DiscussIt-Forum-Website"><button
+                    class="cursor-fancy-1 text-black bg-[#D5F60C] px-14 py-2 rounded-3xl font-bold hover:shadow-btn-shadow transition-shadow">Visit
+                    the Code</button></a>
+        </div>
+    </div>
+    <div data-aos="fade-up"
+        class="testimonials lg:h-[70vh] w-full my-10 relative overflow-x-clip md:h-screen xsm:h-screen xsm:mb-10">
+        <div
+            class="glow h-[350px] w-[500px] absolute opacity-40 blur-2xl -z-10 -top-24 -right-10 rounded-tl-full bg-[rgba(21,87,219,0.67)] shadow-glow-shadow">
+        </div>
+        <div
+            class="glow h-[350px] w-[500px] absolute opacity-40 blur-2xl -z-10 -bottom-10 -right-10 rounded-bl-full bg-[rgba(21,87,219,0.67)] shadow-glow-shadow">
+        </div>
+        <div
+            class="header w-full lg:h-1/5 flex items-center justify-center text-5xl md:h-1/5 md:mx-5 xsm:h-[15%] xl:text-6xl">
+            What they say ?
+        </div>
+        <div class="testimonial-box lg:h-4/5 w-full flex items-center justify-center flex-wrap md:h-4/5 xsm:h-4/5">
+            <div
+                class="img lg:h-full lg:w-1/3 flex items-center justify-center md:h-3/5 md:w-full xsm:h-3/5 xsm:my-5 md:my-0">
+                <img src="/assets/Mahesh-3cb2ad4e.jpg" alt="" class=" h-[90%] rounded-xl shadow-img-shadow">
+            </div>
+            <div
+                class="desc flex justify-center flex-col gap-10 md:gap-10 lg:w-2/5 lg:h-full relative md:w-full md:h-2/5 md:px-10 xsm:px-5 xsm:gap-5">
+                <span class="absolute md:left-0 md:top-0 text-[150px] -z-10 opacity-30 xsm:-top-24"><i
+                        class="fa-solid fa-quote-left"></i></span>
+                <div class="feedback md:text-xl xsm:text-lg xl:text-2xl">" I'm thankful to ketan agwan for contribution
+                    in formation of MVP(Minimum Viable Product) of Agrofounder.
+                    I really appreciate his dedication towards coding and creative implementations in my project."</div>
+                <div class="name">
+                    <span class="md:text-2xl xsm:text-xl">Mr. Mahesh Hon</span><br>
+                    <span class="text-gray-400">Founder of MVP(Minimum Viable Product) of Agrofounder</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="form-alert"
+        class="form-alert fixed -top-16 left-1/2 -translate-x-1/2 z-20 bg-gray-500 h-7 w-96 flex items-center justify-center gap-10 py-5 rounded-md text-md text-white transition-showAlert duration-1">
+    </div>
+    <div class="contact-me lg:h-screen w-full flex flex-wrap relative my-10 overflow-hidden md:h-[300vh]">
+        <img src="/assets/contactboy (1)-f2d565a9.png" alt=""
+            class="absolute h-[90%] xl:right-24 bottom-0 lg:right-5 lg:block hidden">
+        <div data-aos="fade-up"
+            class="header lg:h-1/5 lg:my-0 w-full md:text-5xl flex items-center justify-center md:h-[5%] xsm:text-4xl xsm:my-10">
+            Let’s work Together
+        </div>
+        <div class="lg:h-4/5 w-full flex items-center justify-center flex-wrap md:h-[90%] ">
+            <div
+                class="left lg:w-2/5 lg:h-full flex items-start justify-evenly flex-col box-border md:px-10 lg:gap-2 md:w-full md:h-1/3 xsm:px-5 xsm:gap-5">
+                <div data-aos="fade-right" class="md:text-4xl xsm:text-2xl">
+                    Le’ts make something amazing together Start By <span class="text-[#D5F60C]"> Saying Hi</span>
+                </div>
+                <div data-aos="fade-right" class="large-desc lg:text-sm text-gray-400 md:text-xl xl:text-lg">
+                    I invite you to contact me if you have any questions, inquiries, or would like to discuss
+                    collaborating on a project.
+                    I am always happy to connect with others and share my passion for Web Development.
+                </div>
+                <a href="assets/Resume/Ketan's Resume.pdf" download="Ketan's Resume">
+                    <button data-aos="fade-right"
+                        class="cursor-fancy-1 text-black bg-[#D5F60C] px-14 py-2 rounded-3xl font-bold hover:shadow-btn-shadow transition-shadow">Resume
+                        <i class="fa-solid fa-download"></i></button>
+                </a>
+                <div data-aos="fade-right" class="contacts flex justify-evenly flex-col gap-5 text-xl">
+                    <a href="mailto:ketanagwan7597@gmail.com" class="cursor-fancy-1"><span><i
+                                class="fa-solid fa-envelope"></i> ketanagwan7597@gmail.com</span></a>
+                    <a href="tel:+919921422115" class="cursor-fancy-1"><span><i class="fa-solid fa-phone"></i> +91
+                            9921422115</span></a>
+                    <a href="https://www.linkedin.com/in/ketanagwan/" class="cursor-fancy-1"><span><i
+                                class="fa-brands fa-linkedin"></i> Ketan Agwan</span></a>
+                    <a href="https://github.com/KetanAgwan" class="cursor-fancy-1"><span><i
+                                class="fa-brands fa-github"></i> KetanAgwan</span></a>
+                    <a href="https://www.instagram.com/ketanagwan/" class="cursor-fancy-1"><span><i
+                                class="fa-brands fa-instagram"></i> KetanAgwan</span></a>
+                </div>
+            </div>
+            <div class="lg:hidden h-1/3 flex items-center justify-center ">
+                <img src="/assets/0006 (1)-8fc84381.png" alt="" class="h-full">
+            </div>
+            <div
+                class="right lg:h-full lg:w-3/5 flex lg:items-end lg:justify-start md:h-1/3 md:w-full md:items-center md:justify-center xsm:w-full xsm:items-center xsm:justify-center">
+                <div id="contact-form"
+                    class="form lg:w-3/5 lg:h-4/5 py-5 box-border flex items-center justify-center flex-col gap-5  rounded-md border md:h-full md:w-[90%] xsm:w-[90%] xsm:h-3/4">
+                    <input type="text" id="Name" placeholder="Name"
+                        class="inputs text-md px-5 outline-none border-none text-black h-14 w-[90%] rounded-md focus:outline-blue-500"
+                        required title="Your name goes here">
+                    <input type="text" id="Email" placeholder="Email"
+                        class="inputs text-md px-5 outline-none border-none text-black h-14 w-[90%]  rounded-md focus:outline-blue-500"
+                        required title="Your Email address goes here">
+                    <textarea name="" id="Message" cols="30" rows="10" placeholder="Message"
+                        class=" inputs text-md px-5 py-3 outline-none border-none text-black w-[90%]  rounded-md focus:outline-blue-500"
+                        required title="Your message goes here"></textarea>
+                    <button id="Submit" type="submit"
+                        class="cursor-fancy-1 text-black bg-[#D5F60C] px-14 py-2 self-start mx-6 rounded-3xl font-bold hover:shadow-btn-shadow transition-shadow">Submit
+                        <i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    
+</body>
+
+</html>
